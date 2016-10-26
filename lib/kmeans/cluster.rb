@@ -23,7 +23,7 @@ module Kmeans
         @points = []
       end
 
-      return GpsWaypoints.distance(old_centroid.to_a,centroid.to_a)
+      return Point.distance(old_centroid.to_a,centroid.to_a)
     end
   end
 end

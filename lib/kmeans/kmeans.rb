@@ -35,7 +35,7 @@ module Kmeans
       @data.each do |d|
         distance = []
         @clusters.each_with_index do |cluster, index|
-          distance[index] = GpsWaypoints.distance(cluster.centroid.to_a, d)
+          distance[index] = Point.distance(cluster.centroid.to_a, d)
         end
         a, b = distance.each_with_index.min
         clusters[b].points << Point.new(d.first, d.last)
