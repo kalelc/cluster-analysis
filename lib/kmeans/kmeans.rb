@@ -1,12 +1,13 @@
 module Kmeans
   class Kmeans
-    attr_reader :data, :k, :clusters
+    attr_reader :data, :k, :clusters, :history
 
     def initialize(data, k, iteration = 10)
       @data = data
       @k = k
       @iteration = iteration
       @clusters = []
+      @history = []
     end
 
     def run
@@ -45,6 +46,7 @@ module Kmeans
         a, b = distance.each_with_index.min
         @clusters[b].points << Point.new(d.first, d.last)
       end
+      @history << @clusters
       return @clusters
     end
   end
