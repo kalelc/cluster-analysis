@@ -9,6 +9,11 @@ module Kmeans
       @clusters = []
     end
 
+    def run
+      assigment_step
+      update_step
+    end
+
     def assigment_step
       (1..@k).each do |cluster|
         index = (@data.length * rand).to_i
