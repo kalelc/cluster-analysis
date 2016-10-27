@@ -38,7 +38,7 @@ module Kmeans
           distance[index] = Point.distance(cluster.centroid.to_a, d)
         end
         a, b = distance.each_with_index.min
-        clusters[b].points << Point.new(d.first, d.last)
+        @clusters[b].points << Point.new(d.first, d.last)
       end
       return @clusters
     end
