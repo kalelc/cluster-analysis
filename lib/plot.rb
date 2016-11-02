@@ -1,3 +1,5 @@
+require "gnuplot"
+
 class Plot
   def graph(data, name = "new", title = nil)
     plot = Gnuplot.open do |gp|
