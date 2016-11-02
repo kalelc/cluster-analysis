@@ -1,3 +1,6 @@
+require_relative "point"
+require_relative "cluster"
+
 module Kmeans
   class Kmeans
     attr_reader :data, :k, :clusters, :history
