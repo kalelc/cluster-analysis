@@ -6,9 +6,12 @@ class Plot
       Gnuplot::Plot.new(gp) do |plot|
         plot.title(title)
 
-        data.each do |d|
+        data.each_with_index do |d, i|
           x = d.points.collect { |point| point.x }
           y = d.points.collect { |point| point.y }
+
+          x << centroid.first
+          y << centroid.last
 
           plot.data << Gnuplot::DataSet.new([x,y]) do |ds|
             ds.notitle
