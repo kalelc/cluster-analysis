@@ -10,8 +10,8 @@ class Plot
           x = d.points.collect { |point| point.x }
           y = d.points.collect { |point| point.y }
 
-          x << centroid.first
-          y << centroid.last
+          x << d.centroid.x
+          y << d.centroid.y
 
           plot.data << Gnuplot::DataSet.new([x,y]) do |ds|
             ds.notitle
