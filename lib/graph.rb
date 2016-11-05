@@ -30,8 +30,9 @@ class Graph
 
     def animate
       animation = ImageList.new(*Dir["*.png"])
-      animation.delay = 10
-      animation.write("animated.gif")
+      animation.delay = 100
+      animation.write("0.gif")
+      File.delete(*Dir.glob('*.png'))
     end
   end
 end
