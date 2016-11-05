@@ -1,4 +1,6 @@
 require "gnuplot"
+require 'RMagick'
+include Magick
 
 class Graph
   class << self
@@ -24,6 +26,12 @@ class Graph
         end
       end
       File.write("#{name}.png", plot)
+    end
+
+    def animate
+      animation = ImageList.new(*Dir["*.png"])
+      animation.delay = 10
+      animation.write("animated.gif")
     end
   end
 end
