@@ -1,5 +1,6 @@
 require_relative "point"
 require_relative "cluster"
+require_relative "../graph"
 
 module Kmeans
   class Kmeans
@@ -16,6 +17,13 @@ module Kmeans
     def run
       assigment_step
       update_step
+
+      @history.each do |history|
+        history.each do |h|
+          puts h.centroid.to_a.inspect
+        end
+      end
+      Graph.animate
     end
 
     def assigment_step
@@ -28,13 +36,17 @@ module Kmeans
     end
 
     def update_step
-      @iteration.times do
+      @history << @clusters
+      Graph.create(@clusters, "0", "0")
+      @iteration.times do |i|
         moved = 0
         @clusters.each do |c|
           moved += c.centroid!
         end
 
         group_elements
+        @history << @clusters
+        Graph.create(@clusters, "#{i + 1}", "#{i + 1}")
         break if moved == 0
       end
     end
@@ -49,7 +61,6 @@ module Kmeans
         a, b = distance.each_with_index.min
         @clusters[b].points << Point.new(d.first, d.last)
       end
-      @history << @clusters
       return @clusters
     end
   end
