@@ -12,14 +12,23 @@ module Kmeans
       old_centroid = @centroid
 
       @points.each do |point|
-        xa += point.x
-        ya += point.y
+        lar = GpsWaypoints.to_rad(point.x)
+        lor = GpsWaypoints.to_rad(point.y)
+        xa += Math.cos(lar) * Math.cos(lor)
+        ya += Math.cos(lar) * Math.sin(lor)
+        za += Math.sin(lar)
       end
 
       if (total = @points.length) != 0
         xa /= total
         ya /= total
-        @centroid = Point.new(xa, ya)
+        za /= total
+        lon = Math.atan2(ya,xa)
+        hyp = Math.sqrt(xa ** 2 + ya ** 2)
+        lat = Math.atan2(za,hyp)
+        lat = lat * 180 / Math::PI
+        lon = lon * 180 / Math::PI
+        @centroid = Point.new(lat, lon)
         @points = []
       end
 
