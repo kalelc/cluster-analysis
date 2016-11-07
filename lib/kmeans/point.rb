@@ -7,7 +7,6 @@ module Kmeans
       @y = y
     end
     def to_a
-
       [@x, @y]
     end
 
