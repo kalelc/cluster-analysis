@@ -8,12 +8,15 @@ module Kmeans
     end
 
     def centroid!
-      xa = ya = 0
+      xa = 0
+      ya = 0
+      za = 0
+
       old_centroid = @centroid
 
       @points.each do |point|
-        lar = GpsWaypoints.to_rad(point.x)
-        lor = GpsWaypoints.to_rad(point.y)
+        lar = Point.to_rad(point.x)
+        lor = Point.to_rad(point.y)
         xa += Math.cos(lar) * Math.cos(lor)
         ya += Math.cos(lar) * Math.sin(lor)
         za += Math.sin(lar)
