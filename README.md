@@ -9,8 +9,10 @@ k-means clustering is a method of vector quantization, originally from signal pr
 
 ## Quick Start
 
-Generate git animate with all iteration to order elements in clusters.
+To generate animation with clustered elements in clusters during iterations.
 
 ```ruby test.rb````
 
+## Example
 
+![Preview](https://raw.githubusercontent.com/kalelc/cluster-analysis/master/0.gif)
