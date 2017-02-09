@@ -1,24 +1,18 @@
-# README
+# Cluster Analysis with K-Means
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Purpose
+This project is a example implementation k-means in ruby with rmagick to  explain the distribution of elements in the clusters.
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+k-means clustering is a method of vector quantization, originally from signal processing, that is popular for cluster analysis in data mining. k-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean, serving as a prototype of the cluster.
 
-* System dependencies
+## Quick Start
 
-* Configuration
+To generate animation with clustered elements in clusters during iterations.
 
-* Database creation
+```ruby test.rb````
 
-* Database initialization
+## Example
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Preview](https://raw.githubusercontent.com/kalelc/cluster-analysis/master/0.gif)
