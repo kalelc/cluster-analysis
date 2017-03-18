@@ -11,7 +11,7 @@ k-means clustering is a method of vector quantization, originally from signal pr
 
 To generate animation with clustered elements in clusters during iterations.
 
-```ruby test.rb````
+`ruby test.rb`
 
 ## Example
 
