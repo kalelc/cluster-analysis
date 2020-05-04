@@ -1,7 +1,8 @@
 # Cluster Analysis with K-Means
 
 ## Purpose
-This project is a example implementation k-means in ruby with rmagick to  explain the distribution of elements in the clusters.
+
+This project is an example implementation k-means in ruby with rmagick library to explain the distribution of elements in the clusters.
 
 ## Description
 
